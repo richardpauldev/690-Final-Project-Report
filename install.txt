@@ -1,0 +1,8 @@
+sudo make -j 7
+sudo make modules_install
+sudo cp -v arch/x86/boot/bzImage /boot/vmlinuz-$(make kernelrelease)
+sudo cp -v System.map /boot/System.map-$(make kernelrelease)
+sudo cp -v .config /boot/config-$(make kernelrelease)
+sudo update-initramfs -c -k $(make kernelrelease)
+sudo update-grub
+sudo reboot
