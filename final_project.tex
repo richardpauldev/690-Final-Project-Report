@@ -55,10 +55,141 @@ To counteract these risks, there exists several notable mitigation strategies an
 
 To get a thorough analysis of the impact of automatic dependency management in serveriess computing, we used a mixed-methods approach involving both quantitative and qualitative data collection. This methodology section outlines the survery design, data collection process, and comparative analysis framework. 
 
-To understand the perspectives and experiences of developers
+To understand the perspectives and experiences of developers using automatic dependency management features in serverless computing enviroments, we conducted an online survery targeting software engineers, DevOps professionals, and cloud archtiects. The survey consisted of 14 questions, with three major sections: general participant information/expierence, tools used, and finally opinions on benefits/pitfalls of dependency management.
+
+The survery was distributed via posts on Stack Overflow, Reddit, and word of mouth. The survey was open for two weeks, and we recieved a total of 14 responses. 
+
+\section{Comparative Analysis of Serverless Platforms}
+
+In order to get a comprehensive comparison of different approaches to serverless computing and automatic dependency management, we analyzed AWS Lambda, Azure Functions, and Google Cloud Functions. These services were chosen based on there relative longevity and high usage rates. Each platform was evalutated based on their dependency management tools and integrations, security features, user expierence/ documentation, and rough performance. This helped support our analysis of how dependencies are actualy managed in the serverless industry.
+
+\subsection{AWS Lambda}
+
+AWS' Lambda is on of the most popular serverless platforms and also one of the oldest. It is notable for it's large ecosystem and integration capabilities.
+
+AWS Lambda integrates well with several dependency management tools. It supports AWS CodePipeline and AWS CodeBuild for continuous integration and delivery (CI/CD), which can be configured to use tools like Snyk and Dependabot for automatic vulnerability scanning and updates. These integrations allow for automated detection of outdated or vulnerable dependencies and automatic updating, however it is notable that this must be configured by the user.
+
+\subsection{Azure Functions}
+
+Azure Functions is Microsoft's serverless cloud computing service, which focuses on integration with the Azure ecosystem and is mostly target towards enterprise usage. 
+
+Azure Functions supports dependency management through Azure DevOps, which provides a CI/CD pipelines with capabiliteis for managing dependencies. Tools like Renovate and Dependabot can be integrated into Azure DevOps to automate the process of dependency detection and management. 
+
+BLAHBLAH BLAH 
+
+\section{Comparative Analysis of Serverless Platforms}
+
+This section provides a detailed comparison of the different serverless platforms' approaches to dependency management, specifically focusing on AWS Lambda, Azure Functions, and Google Cloud Functions. We evaluate each platform based on dependency management tools and integrations, security features, user experience and documentation, and performance impact.
+
+\subsection{AWS Lambda}
+
+\subsubsection{Dependency Management Tools and Integrations}
+
+AWS Lambda provides robust integration with several dependency management tools and services. Key integrations include:
+
+- AWS CodePipeline and CodeBuild: These services can automate the process of building, testing, and deploying Lambda functions. They support integration with third-party tools like Snyk and Dependabot to automate the detection and updating of vulnerable dependencies \cite{awsCI2023}.
+- AWS SAM (Serverless Application Model): AWS SAM CLI can be used to manage dependencies for Lambda functions, facilitating local testing and deployment \cite{awssam2023}.
+
+\subsubsection{Security Features}
+
+AWS Lambda incorporates several security features aimed at managing dependencies securely:
+
+- **Snyk Integration:** AWS CodePipeline can be integrated with Snyk to continuously monitor for vulnerabilities in dependencies and provide automated fixes \cite{snykaws2023}.
+- **AWS IAM and Secrets Manager:** These services manage permissions and sensitive information, ensuring that Lambda functions and their dependencies are secure \cite{awsSecurity2023}.
+- **Amazon Inspector:** Provides automated security assessments to help improve the security and compliance of applications deployed on AWS, including Lambda functions \cite{awsinspector2023}.
+
+\subsubsection{User Experience and Documentation}
+
+AWS Lambda offers extensive documentation and a large community of users. The AWS Well-Architected Framework provides best practices and guidelines, particularly for security and dependency management \cite{awsWell2023}. The Lambda console and SAM CLI offer intuitive interfaces for managing and deploying functions, making it easier for developers to implement best practices.
+
+\subsubsection{Performance Impact}
+
+The impact of automatic dependency updates on AWS Lambda's performance is generally minimal, though some users have reported issues with compatibility and stability following updates. AWS CloudWatch provides detailed monitoring and logging to help identify and resolve performance issues \cite{lambdaPerformance2023}.
+
+\subsection{Azure Functions}
+
+\subsubsection{Dependency Management Tools and Integrations}
+
+Azure Functions supports several tools and services for managing dependencies:
+
+- **Azure DevOps:** Offers comprehensive CI/CD pipelines with built-in capabilities for managing dependencies and integrating with tools like Renovate and Dependabot for automated vulnerability detection and updates \cite{azureDevOps2023}.
+- **Azure Functions Core Tools:** These tools facilitate local development and testing, including dependency management through NuGet (for .NET) and npm (for Node.js) \cite{azureCoreTools2023}.
+
+\subsubsection{Security Features}
+
+Azure Functions provides a range of security features related to dependency management:
+
+- **OWASP Dependency-Check Integration:** Azure Pipelines can be configured to use OWASP Dependency-Check to identify and fix vulnerabilities in dependencies \cite{azureowasp2023}.
+- **Azure Security Center and Key Vault:** These services help manage secrets and credentials securely, ensuring that dependencies do not expose sensitive information \cite{azureSecurity2023}.
+- **Managed Identities:** Provide secure and automatic management of service principal identities for applications running in Azure \cite{azureManagedIdentities2023}.
+
+\subsubsection{User Experience and Documentation}
+
+Azure Functions is supported by detailed documentation available through Microsoft Learn. This includes tutorials, best practices, and case studies that help developers implement and manage dependency management practices effectively \cite{azureLearn2023}. The platform's integration with the broader Azure ecosystem provides a seamless experience for managing serverless applications.
+
+\subsubsection{Performance Impact}
+
+Performance and stability are generally reliable on Azure Functions. The platform's robust monitoring tools, such as Azure Monitor and Application Insights, provide comprehensive insights into application performance, allowing developers to quickly address any issues that arise from automatic dependency updates \cite{azurePerformance2023}.
+
+\subsection{Google Cloud Functions}
+
+\subsubsection{Dependency Management Tools and Integrations}
+
+Google Cloud Functions supports several dependency management tools and integrations:
+
+- **Google Cloud Build:** This service integrates with dependency management tools like OWASP Dependency-Check for automated vulnerability scanning and updating \cite{googleBuild2023}.
+- **Third-Party Tools:** Google Cloud Functions also supports integration with tools like Snyk and Dependabot, allowing developers to automate the detection and remediation of vulnerable dependencies \cite{googlesnyk2023}.
+
+\subsubsection{Security Features}
+
+Google Cloud Functions includes several security features designed to manage dependencies securely:
+
+- **Google Cloud IAM and Secret Manager:** These services manage permissions and sensitive data, ensuring that dependencies are handled securely \cite{googleSecurity2023}.
+- **Google Cloud Armor:** Provides protection against web threats and DDoS attacks, enhancing the security of serverless applications \cite{googleArmor2023}.
+- **Security Command Center:** Offers a centralized view of security across Google Cloud resources, including automated vulnerability scanning and monitoring \cite{googleSCC2023}.
+
+\subsubsection{User Experience and Documentation}
+
+Google Cloud Functions is known for its user-friendly interface and comprehensive documentation. The platform's documentation portal provides detailed guides, best practices, and examples, making it accessible for developers of all skill levels \cite{googleDocs2023}. The integration with Google Cloud Console offers a seamless experience for managing serverless applications and their dependencies.
+
+\subsubsection{Performance Impact}
+
+Performance and reliability are strong points for Google Cloud Functions, with users reporting minimal issues related to automatic dependency updates. Google Cloud's monitoring tools, such as Google Cloud Operations Suite (formerly Stackdriver), provide detailed insights into application performance, helping developers quickly identify and resolve issues \cite{googlePerformance2023}.
+
+\subsection{Summary of Findings}
+
+Our evaluation reveals that each platform offers distinct strengths in dependency management:
+
+- **AWS Lambda:** Provides extensive integration with dependency management tools and strong security features. Its comprehensive documentation and large community support make it a robust choice for developers, although occasional performance issues may arise from automatic updates.
+- **Azure Functions:** Offers enterprise-grade support and security features, with a steep learning curve but strong performance and reliability. Its integration with Azure DevOps and security tools like OWASP Dependency-Check make it a powerful option for managing dependencies.
+- **Google Cloud Functions:** Known for ease of use and comprehensive documentation. Its strong performance and security features, along with seamless integration with Google Cloud tools, make it a reliable choice for developers looking for user-friendly dependency management solutions.
+
+Each platform's approach to dependency management reflects its overall strategy and target audience, making the choice dependent on specific organizational needs and developer preferences.
 
 
-\bibliographystyle{IEEEtran}
-\bibliography{references}
+Here's the continuation of the research paper with a focus on Snyk and Dependabot, their uses, and potential upsides and downsides in a serverless environment.
+
+---
+Here's the continuation of the research paper with information on Snyk and Dependabot presented in a traditional paragraph structure.
+
+---
+
+\section{Snyk and Dependabot in Serverless Environments}
+
+Dependency management tools like Snyk and Dependabot play a critical role in maintaining the security and functionality of serverless applications. These tools automate the detection and remediation of vulnerabilities in dependencies, helping developers manage the complexities associated with third-party libraries and packages.
+
+Snyk is a popular tool designed to find and fix vulnerabilities in dependencies. It integrates with various CI/CD pipelines and development tools, providing continuous security monitoring and automated fixes. Snyk continuously scans for vulnerabilities in dependencies and offers detailed reports on potential security risks, enabling developers to address these issues promptly. One of the key features of Snyk is its ability to automatically fix vulnerabilities by suggesting or applying updates to secure versions of dependencies. This capability reduces the manual effort required to manage dependencies, allowing developers to focus on core application logic. Snyk integrates seamlessly with CI/CD pipelines, such as Jenkins, GitHub Actions, and GitLab CI, enabling automated security checks during the build and deployment process. Additionally, Snyk integrates with popular IDEs like Visual Studio Code and IntelliJ IDEA, providing real-time vulnerability detection during development \cite{snyk2023, snykIDE2023}.
+
+The upsides of using Snyk include continuous security monitoring, which ensures that applications remain secure over time, and automated fixes that reduce the manual effort required to manage dependencies. Snyk also provides comprehensive reports that help developers understand the impact and severity of identified issues, and it has a strong community and extensive documentation that offer valuable resources for developers. However, there are some downsides. Automatic updates may introduce compatibility issues, especially if new versions of dependencies have breaking changes \cite{benischke2023updates}. Continuous scanning can also introduce performance overhead, potentially affecting build times and deployment speed. Additionally, Snyk may sometimes flag vulnerabilities that do not pose significant risks, leading to unnecessary updates or fixes \cite{snykFalsePositives2023}.
+
+Dependabot, a GitHub-native tool, automates dependency updates by creating pull requests to update dependencies to the latest versions, helping to maintain secure and up-to-date projects. Dependabot automatically checks for outdated dependencies and creates pull requests to update them, integrating seamlessly with GitHub Security Alerts to notify developers of vulnerabilities in their dependencies. Developers can configure Dependabot to update dependencies according to their preferred schedule and update policies. Dependabot also works well with CI/CD tools, facilitating automated testing and deployment of updated dependencies \cite{dependabot2023}.
+
+The primary benefits of Dependabot include its ease of use and the automation of pull requests, which simplify the process of updating dependencies and reduce manual effort and potential human error. Its integration with GitHub Security Alerts ensures that developers are promptly informed of vulnerabilities. Furthermore, Dependabot's customization options allow developers to tailor update schedules and policies to fit their project needs, providing flexibility in dependency management. However, there are some downsides to using Dependabot. Automated pull requests can lead to merge conflicts, especially in projects with complex dependency trees \cite{dependabotMerge2023}. Frequent updates and pull requests can consume resources and overwhelm development teams, particularly in large projects. Moreover, Dependabot's functionality is primarily focused on GitHub-hosted projects, limiting its use for projects hosted on other platforms \cite{dependabotScope2023}.
+
+In serverless environments, where applications are highly modular and rely heavily on third-party libraries, tools like Snyk and Dependabot offer significant advantages. They improve security by ensuring that serverless applications remain secure through automated vulnerability detection and updates, reducing the risk of exploitation \cite{serverlessSecurity2023}. Automation of dependency management tasks also allows developers to focus on building and optimizing serverless functions, enhancing productivity. Additionally, automated tools can handle the scale and complexity of serverless applications, where dependencies may be numerous and frequently updated.
+
+However, there are potential downsides to using these tools in serverless environments. Automatic updates can introduce compatibility issues, which may be challenging to debug due to the distributed nature of serverless functions \cite{benischke2023updates}. Continuous scanning and frequent updates can introduce performance overhead, affecting the deployment speed and runtime performance of serverless applications. Finally, dependence on external tools for security and updates may lead to vendor lock-in and reduced control over the dependency management process \cite{kavis2014cloud}.
+
+Overall, while tools like Snyk and Dependabot provide valuable automation and security benefits in serverless environments, developers must carefully manage potential downsides to ensure application stability and performance.
 
 \end{document}
