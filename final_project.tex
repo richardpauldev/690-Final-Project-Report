@@ -12,7 +12,7 @@
 
 \begin{document}
 
-\title{This is a Title}
+\title{Analyzing the Impact of Automatic Dependency Management in Serverless Computing}
 \author{Richard Paul\\
 	rdpaul@umass.edu\\
 	University of Massachusetts Amherst}
@@ -30,15 +30,15 @@ Furthermore, the thoroughness and reliability of automated vulnerability checks 
 \section{Background}
 Serverless computing has dramatically changed the landscape of cloud services, offering a new paradigm for application deployment and management. Serverless computing allows code to execute in response to events without the need for provisioning or managing individual servers. This abstracts away the infrastructure layer, significantly simplifying the administrative responsibilities upon application developers \cite{roberts2020lambda}. This model, predominantly offered through Functions-as-a-Service (FaaS) platforms like AWS Lambda, Azure Functions, and Google Cloud Functions, allows developer to focus on code that contributes directly to their application, rather than on the underlying operational complexities \cite{villamizar2015evaluating}.
 
-A critical aspect of developing in a serverless environment is the management of dependencies, external libraries or packages that an application uses to perform functions. Dependencies can include many things from frameworks for web applications to libraries for accessing cloud services. Dependency management is not a trivial task, they must be kept up-to-date to incorporate bug fixes, new features, and, most importantly, security updates \cite{benischke2023updates}. The National Vulnerability Database, a U.S. government repository of vulnerability management data, has shown an increasing amount of vulnerabilities among common dependencies, underscoring the importance of well thought out dependency management \cite{}.
+A critical aspect of developing in a serverless environment is the management of dependencies, external libraries or packages that an application uses to perform functions. Dependencies can include many things from frameworks for web applications to libraries for accessing cloud services. Dependency management is not a trivial task, they must be kept up-to-date to incorporate bug fixes, new features, and, most importantly, security updates \cite{benischke2023updates}. The National Vulnerability Database, a U.S. government repository of vulnerability management data, has shown an increasing amount of vulnerabilities among common dependencies, underscoring the importance of well thought out dependency management \cite{NVDdatabase}.
 
-This has led to rise in automatic dependency checking and updating software to help manage these dependency issues. Tools like Snyk, Dependabot, and Renovate can automate the process of detecting vulnerabilities in a projects dependencies and automatically update those dependencies to a new secure version. This is vital in a serverless environment where the agility and scalability of application can be compromised by vulnerable dependencies \cite{}. 
+This has led to rise in automatic dependency checking and updating software to help manage these dependency issues. Tools like Snyk, Dependabot, and Renovate can automate the process of detecting vulnerabilities in a projects dependencies and automatically update those dependencies to a new secure version. This is vital in a serverless environment where the agility and scalability of application can be compromised by vulnerable dependencies \cite{estrin2021handbook}. 
 
-However, the implementation of automatic dependency management in serverless computing still has significant challenges. The automated update process must be carefully managed to ensure that updates do not introduce changes that break the application. In addition, reliance on automated tools can lead to a decreased understanding of dependency management among developers, potentially leading to complacency and increased security risks when automated systems fail \cite{}.
+However, the implementation of automatic dependency management in serverless computing still has significant challenges. The automated update process must be carefully managed to ensure that updates do not introduce changes that break the application. In addition, reliance on automated tools can lead to a decreased understanding of dependency management among developers, potentially leading to complacency and increased security risks when automated systems fail \cite{hilton2016ci}.
 
-The security risk in dependencies primarily come from two distinct factors: the external nature of the dependencies and the complex and opaque dependency trees that they can form. A single application may directly depend on hundreds of external libraries, which may themselves depend on thousands more. This complexity significantly increases the attack surface of the applications, as each external dependency is a point of failure for attackers \cite{}. For example, there was a notable incident where a popular NPM package, event-stream, was compromised to steal cryptocurrency for the attackers, showcasing the cascading risk a single vulnerable dependency poses to thousands of different applications \cite{}.
+The security risk in dependencies primarily come from two distinct factors: the external nature of the dependencies and the complex and opaque dependency trees that they can form. A single application may directly depend on hundreds of external libraries, which may themselves depend on thousands more. This complexity significantly increases the attack surface of the applications, as each external dependency is a point of failure for attackers \cite{OWASP2021top}. For example, there was a notable incident where a popular NPM package, event-stream, was compromised to steal cryptocurrency for the attackers, showcasing the cascading risk a single vulnerable dependency poses to thousands of different applications \cite{fox2018open}.
 
-Moreover, the ephemeral and stateless nature of serverless function can signficantly increase these risks. Since serverless applications scale dynamically with the resources demanded from them, a vulnerability in a single dependency can rapidly propagate across multiple instances, amplifying the potential impact of any security brach \cite{}.
+Moreover, the ephemeral and stateless nature of serverless function can signficantly increase these risks. Since serverless applications scale dynamically with the resources demanded from them, a vulnerability in a single dependency can rapidly propagate across multiple instances, amplifying the potential impact of any security brach \cite{kavis2014cloud}.
 
 To counteract these risks, there exists several notable mitigation strategies and best practices that have been recommended and adopted:
 
@@ -50,6 +50,12 @@ To counteract these risks, there exists several notable mitigation strategies an
 	\item Developer education has been cited as a very important part of dependency management. Ultimately, the buck stops with the development team and it's vital to insure all developer are cognizant of the risks involved with using dependencies, and best practices for doing so. 
 	
 \end{itemize}
+
+\section{Methodology}
+
+To get a thorough analysis of the impact of automatic dependency management in serveriess computing, we used a mixed-methods approach involving both quantitative and qualitative data collection. This methodology section outlines the survery design, data collection process, and comparative analysis framework. 
+
+To understand the perspectives and experiences of developers
 
 
 \bibliographystyle{IEEEtran}
