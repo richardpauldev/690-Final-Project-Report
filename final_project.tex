@@ -91,14 +91,6 @@ To counteract these risks, there exists several notable mitigation strategies an
 	
 \end{itemize}
 
-\section{Methodology}
-
-To get a thorough analysis of the impact of automatic dependency management in serveriess computing, we used a mixed-methods approach involving both quantitative and qualitative data collection. This methodology section outlines the survery design, data collection process, and comparative analysis framework. 
-
-To understand the perspectives and experiences of developers using automatic dependency management features in serverless computing enviroments, we conducted an online survery targeting software engineers, DevOps professionals, and cloud archtiects. The survey consisted of 14 questions, with three major sections: general participant information/expierence, tools used, and finally opinions on benefits/pitfalls of dependency management.
-
-The survery was distributed via posts on Stack Overflow, Reddit, and word of mouth. The survey was open for two weeks, and we recieved a total of 14 responses. 
-
 \section{Comparative Analysis of Serverless Platforms}
 
 In order to get a comprehensive comparison of different approaches to serverless computing and automatic dependency management, we analyzed AWS Lambda, Azure Functions, and Google Cloud Functions. These services were chosen based on there relative longevity and high usage rates. Each platform was evalutated based on their dependency management tools and integrations, security features, user expierence/ documentation, and rough performance. This helped support our analysis of how dependencies are actualy managed in the serverless industry.
@@ -231,6 +223,45 @@ In serverless environments, where applications are highly modular and rely heavi
 However, there are potential downsides to using these tools in serverless environments. Automatic updates can introduce compatibility issues, which may be challenging to debug due to the distributed nature of serverless functions \cite{benischke2023updates}. Continuous scanning and frequent updates can introduce performance overhead, affecting the deployment speed and runtime performance of serverless applications. Finally, dependence on external tools for security and updates may lead to vendor lock-in and reduced control over the dependency management process \cite{kavis2014cloud}.
 
 Overall, while tools like Snyk and Dependabot provide valuable automation and security benefits in serverless environments, developers must carefully manage potential downsides to ensure application stability and performance.
+
+\section{Survery Design and Analysis}
+
+To get a thorough analysis of the impact of automatic dependency management in serverless computing, we used a mixed-methods approach involving both quantitative and qualitative data collection. This methodology section outlines the survery design, data collection process, and comparative analysis framework. 
+
+The following questions were asked:
+
+\begin{enumerate}
+\item What is your current role? 
+\item How many years of experience do you have in software development?	
+\item Which serverless cloud providers have you used? 
+\item How often do you encounter issues related to dependency management? 
+\item What dependency management tools do you currently use? Which third-party dependency management tools have you used?
+\item Do you integrate dependency management tools into your CI/CD pipelines?
+\item If yes, how has integrating these tools affected your workflow?
+\item Does your serverless provider/development environment offer automatic dependency vulnerability checking? If yes, how would you rate its effectiveness?	
+\item What are the main benefits you have observed with automatic dependency management?
+\item What are the main pitfalls or challenges you have experienced with automatic dependency management?
+\item In your opinion, what ares of dependency management need improvement?	
+\item Any additional comments or suggestions regarding automatic dependency vulnerability checking and maintenance by cloud providers?
+\end{enumerate}
+
+To understand the perspectives and experiences of developers using automatic dependency management features in serverless computing enviroments, we conducted an online survery targeting software engineers, DevOps professionals, and cloud archtiects. The survey consisted of 14 questions, with three major sections: general participant information/expierence, tools used, and finally opinions on benefits/pitfalls of dependency management.
+
+The survery was distributed via posts on Stack Overflow, Reddit, and word of mouth. The survey was open for two weeks, and we recieved a total of 14 responses. 
+
+\subsection{Results Analysis}
+
+The survery consisted of 7 developers, 3 DevOps engineers, 2 project managers, 1 QA engineer and 1 software architect. There was a broad range of expierences, ranging from less than one year to more than ten years, with the most common number of years between 4-7. The primary types of projects that were worked on were web development (6), mobile devlopment (4), desktop applications (2), embedded systems (1), and cloud computing (1). 
+
+The frequency of dependency issues varied, with 71\% of particpants indicating that they had encountered issues with their dependency management solution. Specifically, 1 respondent never expierences issues, 2 rarely did, 6 somtimes did, 4 often did, and 1 expierenced them very commonly. This leads to the conclusion that dependency management is indeed a struggle for many developers, and that automated dependency mangament solutions have flaws that require developer intervention.
+
+Respondents reported using a variety of tools for their dependency management needs, most commonly npm (8), Maven (5), and Gradle (4). Other tools that were used were pip (3), and 1 of each Bundler, Conan, and Composer. This shows that there is a diverse range of dependency management tools used, each with some similiar features but other things that they are missing. 
+
+Satisifaction rates varied significantly, with 3 respondents very satisfied with their current solution, 5 satisfied, 4 relatively neutral, 2 report dissatisfcation. No respondents indicated that they were extremely dissatisified with the their package manager. These results help to show that respondents are generally satisfied with their dependency management solutions. However, there are still a signifciant proportion of developers who indicate that they are dissatisified with the current state of software available, showing a continued need for improvement. 
+
+The most significant challenges that were faced in version conflicts (9), security vulnerabilities (6), compatibility issues (5), and lack of documentation (4). Other challenges that some respondents listed were licensing issues and network latency issues. Version conflicts emerged as the predominant issue, highlighting the need for mananging them. 
+
+Lucklily developers considered 
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
