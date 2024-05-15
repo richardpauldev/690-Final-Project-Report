@@ -1,23 +1,63 @@
-\documentclass[12pt, letterpaper]{article}
+\documentclass[sigconf]{acmart}
+
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
 
 % Packages
 \usepackage{times}
 \usepackage{geometry}
-\usepackage{cite}
 \usepackage{amsmath}
 \usepackage{listings}
-\usepackage[hyphens]{url}
+% \usepackage[hyphens]{url}
 \usepackage{hyperref}
-
 
 \begin{document}
 
 \title{Analyzing the Impact of Automatic Dependency Management in Serverless Computing}
-\author{Richard Paul\\
-	rdpaul@umass.edu\\
-	University of Massachusetts Amherst}
-\date{\today}
+\author{Richard Paul}
+\affiliation{%
+	\institution{University of Massachusetts Amherst}
+	\city{Amherst}
+	\state{MA}
+	\country{USA}
+}
+\email{rdpaul@umass.edu}
+
+\begin{abstract}
+	This is an abstract
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+	<concept>
+		<concept_id>10002978.10003006.10003007</concept_id>
+		<concept_desc>Security and privacy~Operating systems security</concept_desc>
+		<concept_significance>500</concept_significance>
+		</concept>
+	<concept>
+		<concept_id>10010520.10010575</concept_id>
+		<concept_desc>Computer systems organization~Cloud computing</concept_desc>
+		<concept_significance>300</concept_significance>
+		</concept>
+	<concept>
+		<concept_id>10010520.10010553</concept_id>
+		<concept_desc>Computer systems organization~Embedded systems</concept_desc>
+		<concept_significance>100</concept_significance>
+		</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Operating systems security}
+\ccsdesc[300]{Computer systems organization~Cloud computing}
+\ccsdesc[100]{Computer systems organization~Embedded systems}
+
+\keywords{Serverless computing, dependency management, large-scale systems, security, cloud computing}
+
 \maketitle
+
+\acmConference[690G Final Project Report]{Large Scale System Security, Spring 2024}{University of Massachusetts Amherst}
 
 \section{Introduction}
 As cloud computing evolves, serverless architectures have emerged as a paradigm shift, allowing developers to build and deploy applications without the costly overhead of managing servers. This allows developers to abstract away the infrastructure, focusing on code and functionality. However, this introduces new challenges, including in the realm of security \cite{baldini2017serverless}. One important concern is dependency management. Dependencies, or external libraries and packages for an application, can contain vulnerabilities that pose security risks \cite{marin2022serverless}. Recognizing this issue, some serverless cloud providers have begun to integrate automatic dependency vulnerability checking and updating. This paper aims to scrutinize the benefits and drawbacks of those features, to provide a detailed analysis of their impact on serverless computing.
@@ -191,5 +231,8 @@ In serverless environments, where applications are highly modular and rely heavi
 However, there are potential downsides to using these tools in serverless environments. Automatic updates can introduce compatibility issues, which may be challenging to debug due to the distributed nature of serverless functions \cite{benischke2023updates}. Continuous scanning and frequent updates can introduce performance overhead, affecting the deployment speed and runtime performance of serverless applications. Finally, dependence on external tools for security and updates may lead to vendor lock-in and reduced control over the dependency management process \cite{kavis2014cloud}.
 
 Overall, while tools like Snyk and Dependabot provide valuable automation and security benefits in serverless environments, developers must carefully manage potential downsides to ensure application stability and performance.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
 
 \end{document}
