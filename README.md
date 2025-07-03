@@ -26,7 +26,7 @@ However, these automation tools introduce new security and operational challenge
 - **Survey & Developer Insights:**  
   Designed and distributed a developer survey (n=14), collecting data on real-world experiences, tool usage, and perceived risks/benefits of automated dependency management in serverless environments.
 - **Security Findings:**  
-  Identified critical security risks—such as version conflicts, hidden vulnerabilities, and the challenge of transparency and vendor lock-in in automated tools.
+  Identified critical security risks such as: version conflicts, hidden vulnerabilities, and the challenge of transparency and vendor lock-in in automated tools.
 - **Recommendations:**  
   Offered actionable best practices, including stronger developer education, transparency in automation, and enhanced monitoring.
 
